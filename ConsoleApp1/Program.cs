@@ -14,6 +14,9 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
+            DateTime tempDate = DateTime.Now;
+            Item testItem = new Item(1, Status.InProcess, "Testt", "This fk test", LabelType.Homework, tempDate);
+            testItem.displayItemProperties();
             appInit();
 
             System.Console.WriteLine("Welcome to TODO. " +
