@@ -79,7 +79,7 @@ namespace ConsoleApp1
                         note.addItem();
                         break;
                     case "3":
-                        deleteNote();
+                        note.deleteItem();
                         break;
                     case "4":
                         selectNote();

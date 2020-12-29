@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+//using System.Linq;
 using static ConsoleApp1.Utils;
 
 namespace ConsoleApp1
@@ -39,14 +40,18 @@ namespace ConsoleApp1
             Items.ForEach(item => item.displayItem());
             
         }
-        
+
         public void addItem()
         {
             Console.Clear();
             displayNote();
-            print(" o | ");
+            Item item = new Item();
+            item.Text = input("Text: ");
+            item.State= Int32.Parse(input("Completed ?\n1-Yes or 2-No:"));  
+            Items.Add(item);
+            //print(" o | ");
             //string item = input();
-            this.Items.Add(new Item(input()));
+            //this.Items.Add(new Item(input("Text: ")));
             
             Console.Clear();
 
@@ -57,7 +62,9 @@ namespace ConsoleApp1
         }
         public void deleteItem()
         {
-
+            int index = Int32.Parse(input("Which one, enter number: "));
+            Console.Clear();
+            this.Items.RemoveAt(index);
         }
 
     }

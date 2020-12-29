@@ -5,26 +5,30 @@ namespace ConsoleApp1
 {
     class Item
     {
-        Boolean _state;
+        int _state;
         String _text;
-
-        public Item(string text)
+        public Item()
         {
-            State = false;
+
+        }
+        public Item(string text,int state)
+        {
+            State = state;
             Text = text;
         }
 
-        public bool State { get => _state; set => _state = value; }
+        public int State { get => _state; set => _state = value; }
         public string Text { get => _text; set => _text = value; }
 
         public void displayItem()
         {
+
             switch (State)
             {
-                case true:
+                case 1:
                     println(" x | " + Text);
                     break;
-                case false:
+                case 2:
                     println(" o | " + Text);
                     break;
             }
